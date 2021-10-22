@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import styled from 'styled-components';
+import Navbar from './components/Navbar/Navbar';
+import Intro from './components/Intro/Intro';
+import Feature from './components/Feature/Feature';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+  <Container>
+     <Navbar />
+     <Intro />
+     <IntoShape />
+    </Container>
+   
+    <Container>
+
+    </Container>
+    
+    </>
   );
 }
 
 export default App;
+
+
+const Container = styled.div`
+  height: 100vh;
+  overflow: hidden;
+  /* background-color: red; */
+`;
+
+const IntoShape = styled.div`
+width: 100%;
+height: 100%;
+position: absolute;
+top: 0;
+left: 0;
+z-index: -1;
+clip-path: polygon(100% 0%, 60% 0%, 40% 100%, 100% 100%);
+background-color: crimson;
+   
+`;
